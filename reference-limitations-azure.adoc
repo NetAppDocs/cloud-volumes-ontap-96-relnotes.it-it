@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations-azure.html 
+keywords: limitations, ha, azure, pay-as-you-go, paygo, cloud solution provider, nfsv3 
+summary: Queste limitazioni note sono specifiche di Cloud Volumes ONTAP in Microsoft Azure. 
+---
+= Limitazioni note in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le seguenti limitazioni note sono specifiche di Cloud Volumes ONTAP in Microsoft Azure. Verificare anche link:reference-limitations.html["Limitazioni in tutti i provider di cloud"].
+
+
+
+== Le nuove implementazioni non sono supportate
+
+Le nuove implementazioni di Cloud Volumes ONTAP 9.6 non sono più supportate in Azure. È necessario implementare Cloud Volumes ONTAP 9.7.
+
+
+
+== Limitazioni DI HA
+
+Le seguenti limitazioni influiscono sulle coppie ha di Cloud Volumes ONTAP in Microsoft Azure:
+
+* NFSv4 non è supportato. NFSv3 è supportato.
+* Le coppie HA non sono supportate in alcune regioni.
++
+https://cloud.netapp.com/cloud-volumes-global-regions["Consulta l'elenco delle aree Azure supportate"^]
+
+

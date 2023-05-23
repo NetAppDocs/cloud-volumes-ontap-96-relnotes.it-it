@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: reference-configs-aws.html 
+keywords: ec2, instance, type, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, sizes, disks 
+summary: Cloud Volumes ONTAP è disponibile in AWS nelle configurazioni PAYGO e BYOL. PER PAYGO, puoi scegliere tra Explore, Standard o Premium. 
+---
+= Configurazioni supportate in AWS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP è disponibile in AWS in due opzioni di prezzo: Pay-as-you-go e Bring Your Own License (BYOL). Per il pay-as-you-go, puoi scegliere tra tre configurazioni: Explore, Standard o Premium.
+
+
+
+== Configurazioni supportate per licenza
+
+Cloud Volumes ONTAP è disponibile in AWS come sistema a nodo singolo e come coppia di nodi ad alta disponibilità (ha) per la fault tolerance e le operazioni senza interruzioni.
+
+L'aggiornamento di un sistema a nodo singolo a una coppia ha non è supportato. Se si desidera passare da un sistema a nodo singolo a una coppia ha, è necessario implementare un nuovo sistema e replicare i dati dal sistema esistente al nuovo sistema.
+
+[cols="h,d,d,d,d"]
+|===
+|  | Esplora | Standard | Premium | BYOL 
+
+
+| Tipi di istanze EC2 supportati ^1^  a| 
+* m4.xlange
+* m5.xlange
+
+ a| 
+* m4,2 x grande
+* m5.2xgrande
+* r4.xlange
+* r5.xlange
+
+ a| 
+* c4.4xgrande
+* c4.8xlarge
+* c5.9xlarge
+* c5.18xlarge
+* c5d.4xlarge ^2^
+* c5d.9xlarge ^2^
+* c5d.18xlarge ^2,3^
+* m4,4xgrande
+* m5.4xgrande
+* m5d.8xlarge ^2,3^
+* r4,2 x grande
+* r5.2xgrande
+* r5d.2xlarge ^2^
+
+ a| 
+* c4.4xgrande
+* c4.8xlarge
+* c5.9xlarge
+* c5.18xlarge
+* c5d.4xlarge ^2^
+* c5d.9xlarge ^2^
+* c5d.18xlarge ^2,3^
+* m4.xlange
+* m4,2 x grande
+* m4,4xgrande
+* m5.xlange
+* m5.2xgrande
+* m5.4xgrande
+* m5d.8xlarge ^2,3^
+* r4.xlange
+* r4,2 x grande
+* r5.xlange
+* r5.2xgrande
+* r5d.2xlarge ^2^
+
+
+
+
+| Tipi di disco supportati ^4^ 4+| SSD General Purpose (gp2) ^5^, SSD IOPS con provisioning (io1) e HDD ottimizzati per il throughput (st1) 
+
+
+| Tiering dei dati a freddo in S3 | Non supportato 3+| Supportato 
+
+
+| Capacità massima del sistema (dischi + storage a oggetti) | 2 TIB | 10 TIB | 368 TIB ^5^ | 368 TIB per licenza ^5^ 
+|===
+Note:
+
+. Quando si sceglie un tipo di istanza EC2, è possibile specificare se si tratta di un'istanza condivisa o dedicata.
+. Questi tipi di istanze includono lo storage NVMe locale, utilizzato da Cloud Volumes ONTAP come _Flash cache_. Flash cache accelera l'accesso ai dati attraverso il caching intelligente in tempo reale dei dati utente recentemente letti e dei metadati NetApp. È efficace per carichi di lavoro a lettura intensiva, inclusi database, e-mail e file service. La compressione deve essere disattivata su tutti i volumi per sfruttare i miglioramenti delle prestazioni di Flash cache. link:reference-limitations-aws.html#flash-cache-limitations["Scopri di più"].
+. A partire da Cloud Volumes ONTAP 9.6 P3, sono supportati c5d.18xlarge e m5d.8xlarge.
+. Le migliori prestazioni di scrittura sono abilitate quando si utilizzano SSD con Cloud Volumes ONTAP standard, Premium e BYOL.
+. Gli SSD gp3 non sono supportati.
+. Per alcune configurazioni ha, i limiti dei dischi impediscono di raggiungere il limite di capacità di 368 TIB utilizzando solo i dischi. In questi casi, è possibile raggiungere il limite di capacità di 368 TIB di https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["tiering dei dati inattivi sullo storage a oggetti"^]. Per informazioni sui limiti dei dischi, fare riferimento a. link:reference-limits-aws.html["limiti di storage"].
+. Per il supporto della regione AWS, vedere https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes Global Regions"^].
+
+
+
+
+== Dimensioni dei dischi supportate
+
+In AWS, un aggregato può contenere fino a 6 dischi dello stesso tipo e dimensione.
+
+[cols="3*"]
+|===
+| SSD General Purpose (gp2) | SSD IOPS con provisioning (io1) | HDD ottimizzati per il throughput (st1) 
+
+
+ a| 
+* 100 GiB
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 6 TIB
+* 8 TIB
+* 16 TIB
+
+ a| 
+* 100 GiB
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 6 TIB
+* 8 TIB
+* 16 TIB
+
+ a| 
+* 500 GiB
+* 1 TIB
+* 2 TIB
+* 4 TIB
+* 6 TIB
+* 8 TIB
+* 16 TIB
+
+
+|===
