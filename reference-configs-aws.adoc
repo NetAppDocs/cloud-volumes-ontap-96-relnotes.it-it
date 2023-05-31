@@ -93,7 +93,7 @@ Note:
 . A partire da Cloud Volumes ONTAP 9.6 P3, sono supportati c5d.18xlarge e m5d.8xlarge.
 . Le migliori prestazioni di scrittura sono abilitate quando si utilizzano SSD con Cloud Volumes ONTAP standard, Premium e BYOL.
 . Gli SSD gp3 non sono supportati.
-. Per alcune configurazioni ha, i limiti dei dischi impediscono di raggiungere il limite di capacità di 368 TIB utilizzando solo i dischi. In questi casi, è possibile raggiungere il limite di capacità di 368 TIB di https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["tiering dei dati inattivi sullo storage a oggetti"^]. Per informazioni sui limiti dei dischi, fare riferimento a. link:reference-limits-aws.html["limiti di storage"].
+. Per alcune configurazioni ha, i limiti dei dischi impediscono di raggiungere il limite di capacità di 368 TIB utilizzando solo i dischi. In questi casi, è possibile raggiungere il limite di capacità di 368 TIB di https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["tiering dei dati inattivi sullo storage a oggetti"^]. Per informazioni sui limiti dei dischi, fare riferimento a. link:reference-limits-aws.html["limiti di storage"].
 . Per il supporto della regione AWS, vedere https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes Global Regions"^].
 
 
