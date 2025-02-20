@@ -18,6 +18,12 @@ Le seguenti limitazioni note sono specifiche di Cloud Volumes ONTAP in Microsoft
 
 
 
+== Limitazioni con l'utilizzo delle estensioni VM di Azure
+
+Cloud Volumes ONTAP non supporta le estensioni della macchina virtuale Azure e le applicazioni delle macchine virtuali in un'implementazione. L'utilizzo di Cloud Volumes ONTAP in Azure con estensioni VM provoca ritardi nelle operazioni e NetApp consiglia di evitarli.
+
+
+
 == Le nuove implementazioni non sono supportate
 
 Le nuove implementazioni di Cloud Volumes ONTAP 9.6 non sono più supportate in Azure. È necessario implementare Cloud Volumes ONTAP 9.7.
