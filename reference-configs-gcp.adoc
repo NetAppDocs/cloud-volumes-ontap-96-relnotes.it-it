@@ -81,7 +81,7 @@ Note:
 +
 link:reference-limits-gcp.html["Scopri di più sui limiti dei dischi in Google Cloud"].
 
-. Per il supporto dell'area geografica di Google Cloud Platform, vedere https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes Global Regions"^].
+. Per il supporto regionale di Google Cloud Platform, vedere https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes Global Regions"^].
 
 
 
